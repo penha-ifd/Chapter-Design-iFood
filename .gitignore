@@ -1,0 +1,6 @@
+node_modules/
+dist/
+code.js
+ui.html
+*.log
+.DS_Store

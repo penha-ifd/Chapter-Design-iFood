@@ -1,0 +1,68 @@
+{
+  "name": "tomate",
+  "version": "1.0.0",
+  "description": "Tomate — Design System Audit Plugin for Figma",
+  "main": "code.js",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs && vite build && mv index.html ui.html",
+    "build:plugin": "node build.mjs",
+    "build:ui": "vite build",
+    "watch": "node build.mjs --watch",
+    "dev:ui": "vite dev",
+    "lint": "eslint --ext .ts,.tsx --ignore-pattern node_modules .",
+    "lint:fix": "eslint --ext .ts,.tsx --ignore-pattern node_modules --fix ."
+  },
+  "author": "Tiago — Staff Design Engineer, iFood Ads",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@base-ui/react": "^1.2.0",
+    "@figma/eslint-plugin-figma-plugins": "*",
+    "@figma/plugin-typings": "*",
+    "@remixicon/react": "^4.9.0",
+    "@tailwindcss/vite": "^4.2.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "@vitejs/plugin-react": "^5.1.4",
+    "autoprefixer": "^10.4.27",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "esbuild": "^0.24.0",
+    "eslint": "^8.54.0",
+    "postcss": "^8.5.6",
+    "radix-ui": "^1.4.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "shadcn": "^3.8.5",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "^4.2.1",
+    "tw-animate-css": "^1.4.0",
+    "typescript": "^5.3.2",
+    "vite": "^7.3.1",
+    "vite-plugin-singlefile": "^2.3.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@figma/figma-plugins/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "root": true,
+    "rules": {
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          "argsIgnorePattern": "^_",
+          "varsIgnorePattern": "^_",
+          "caughtErrorsIgnorePattern": "^_"
+        }
+      ]
+    }
+  }
+}
